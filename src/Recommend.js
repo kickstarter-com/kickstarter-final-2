@@ -7,33 +7,12 @@ class Recommend extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            articles:[this.props.article]
+           
          }
     }
-    // componentDidMount(){
-    //     this.setState({
-    //         articles : this.props.article
-    //     })
-    // }
 
-    // static getDerivedStateFromProps(props, state) {
-    //     if (props.article !== state.articles) {
-    //         return {
-    //             articles: this.props.article,
-              
-    //         };
-    //       }
-    //       return null;
-    //   }
-    // componentWillReceiveProps(props){
-    //     if(props.article!==this.props.article){
-    //       //Perform some operation
-    //       this.setState({articles: this.props.article });
-    //       this.classMethod();
-    //     }
-    //   }
     render() { 
-        console.log(this.state.articles)
+        console.log(this.props.article)
         const settings =  {
             arrows: false,
             dots: true,
@@ -50,12 +29,12 @@ class Recommend extends React.Component {
                       <div>
                           <div className="mark-div"></div>
                       </div>
-                      <a href="/" className="topic-link">
-                          <h3>A MAZE.</h3>
-                          <p>Support the 2020 edition of this art, games, and “playful media” festival.</p>
+                      <a href="https://proxy-kikstarter.herokuapp.com/?id=0" className="topic-link">
+                          <h3>{this.props.article.length?this.props.article[0].projectName:null}</h3>
+                          <p>{this.props.article.length?this.props.article[0].projectTeazer:null}</p>
                       </a>
                       <div className="by-div">
-                       <span>BY </span><a href="/"></a>
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[0].owner:null}</a>
                       </div>
                     </div>
                     <div className="Recommended-dev">
