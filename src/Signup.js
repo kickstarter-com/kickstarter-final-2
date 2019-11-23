@@ -28,9 +28,17 @@ class Signup extends React.Component {
       url: "http://localhost:8000/register",
       type: "POST",
       data: userData,
-      datatype: "json",
-      success: function() {
+      datatype: "application/json",
+      success: function(user) {
         console.log("signup done");
+        console.log(user);
+        alert(
+          "You have been registed successfully by this user name: " + user.email
+        );
+        window.location.href = "http://localhost:3000/";
+      },
+      error: function(err) {
+        alert("please entre valid data");
       }
     });
   }

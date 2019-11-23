@@ -110,9 +110,10 @@ app.post("/login", (req, res) => {
             expiresIn: 1800 // 30 minutes in seconds
           },
           (err, token) => {
-            res.json({
+            res.status(200).send({
               success: true,
-              token: "Bearer " + token
+              token: "Bearer " + token,
+              user: user
             });
           }
         );
