@@ -6,6 +6,7 @@ class SliderPart extends React.Component {
   // constructor(props) {
   //   super(props);
 
+<<<<<<< HEAD
   // }
   render() {
     var Style = "width: ";
@@ -69,6 +70,35 @@ class SliderPart extends React.Component {
                 </div>
               );
             })}
+=======
+    
+  }
+  render() {   
+  
+    return (
+      <div>
+        
+        <div className="slider-section"> 
+        <div>
+          <p className="slider-title">TAKING OFF</p>
+        </div> 
+        <div className="slider">
+          {this.props.article.map(item => {      
+          return <div className="slider-unit-2" key={item._id}>
+            <div><a href={"https://proxy-kikstarter.herokuapp.com/?id="+item.projectId}><img alt="sorry" src={item.projectImg}></img></a></div>
+            <div className="marko-div" ></div>
+            <div>
+            <a href={"https://proxy-kikstarter.herokuapp.com/?id="+item.projectId}><h3>{item.projectName}</h3></a>
+            </div>
+            <div>
+            <a href={"https://proxy-kikstarter.herokuapp.com/?id="+item.projectId}><p>{item.minorDescription}</p></a>
+            </div>
+            <div>
+            <div className="by-div">
+              <span>BY </span><a href="/">{item.owner}</a>
+             </div>
+            </div>
+>>>>>>> dc62a5d2ca3f910971ef5add7bb6fc71f28a82ba
           </div>
         </div>
       </div>

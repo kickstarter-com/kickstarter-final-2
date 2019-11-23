@@ -8,6 +8,8 @@
 }
 .Featured-div img{
   max-width: 100%;
+  width: 100%;
+  height: 365px;
 }
 .Featured-div{
     padding-right: 4rem;
@@ -35,7 +37,7 @@
 
 .slider-unit img{
   height: 90px;
-  
+  width: 200px;
   padding-right: 20px;
 }
 h6{
@@ -64,6 +66,10 @@ h6{
   text-decoration: none;
   font-size: 14px;
   color: #282828;
+}
+.slider-unit a:hover{
+  color: #037362;
+  text-decoration: underline;
 }
 .first-span{
  display: block;
@@ -106,6 +112,10 @@ h6{
   font-size: 28px;
   font-weight: 400;
   margin: 10px 0;
+}
+.topic-link h3:hover{
+  color: #037362;
+  text-decoration: underline;
 }
 .topic-link p{
   font-family: "Cooper Light", Georgia, Times, "Times New Roman", serif;
