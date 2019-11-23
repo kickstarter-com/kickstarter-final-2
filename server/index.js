@@ -28,6 +28,7 @@ const validateLoginInput = require("./validation/login");
 app.use(passport.initialize());
 // Passport config
 // require("./config/passport")(passport);
+// eslint-disable-next-line no-unused-expressions
 require("./config/passport").passport;
 //---------------------------------------------------------------------------
 

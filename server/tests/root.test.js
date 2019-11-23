@@ -15,7 +15,7 @@ describe("Test the root GET request", () => {
       .get("/")
       .then(response => {
         let data = response.body.length;
-        expect(data).toBe(101);
+        expect(data).toBe(10);
       });
   });
 });
