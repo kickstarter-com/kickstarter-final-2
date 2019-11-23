@@ -1,87 +1,75 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const URI = "mongodb+srv://Kickstarter:kickstarter@cluster0-pucsw.mongodb.net/maindb?retryWrites=true&w=majority";
-const projectSchema = Schema({
-  projectId: {
-    type: Number,
-    required: true,
-    unique: true
-  },
-  projectName: {
-    type: String
-    // required: true
-  },
-  projectTeazer: {
-    type: String
-  },
-  owner: {
-    type: String
-  },
-  rate: {
-    type: Number
-  },
-  currentFund: {
-    type: Number
-  },
-  goalFund: {
-    type: String
-  },
-  numberOfBackers: {
-    type: Number
-  },
-  daysToGO: {
-    type: Number
-  },
-  BackersIds: {
-    type: Number
-  },
-  projectImg: {
-    type: String
-  },
-  majorDescriptionImg: {
-    type: String
-  },
-  majorDescription: {
-    type: String
-  },
-  minorDescriptionImg: {
-    type: String
-  },
-  minorDescription: {
-    type: String
-  }
-});
-//Project Model
-const Project = mongoose.model("articles", projectSchema);
-// Connect to database
-mongoose.connect(URI, { useUnifiedTopology: true });
+var mongoose = require("mongoose");
+mongoose.set("useCreateIndex", true);
+var faker = require("faker");
+
+const URI = require("../config/keys.js").mongoURI;
+mongoose.connect(URI, { userNewUrlParser: true }, { useUnifiedTopology: true });
+
 var db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
-  // we're connected!
-  console.log("We are Connected :Taz");
+
+db.on("error", function() {
+  console.log("mongoose connection error");
 });
-// populat data to database.
-const saveProjects = function(data) {
-  console.log(data);
-  for (var i = 0; i < data.length; i++) {
-    var projectId = data[i].projectId;
-    var projectName = data[i].projectName;
-    var projectTeazer = data[i].projectTeazer;
-    var currentFund = data[i].currentFund;
-    var goalFund = data[i].goalFund;
-    var numberOfBackers = data[i].numberOfBackers;
-    var daysToGO = data[i].daysToGO;
-    var BackersIds = data[i].BackersIds;
-    var projectImg = data[i].projectImg;
-    var majorDescriptionImg = data[i].majorDescriptionImg;
-    var majorDescription = data[i].majorDescription;
-    var minorDescriptionImg = data[i].minorDescriptionImg;
-    var minorDescription = data[i].minorDescription;
-    var newProject = new Project({
+
+db.once("open", function() {
+  console.log("mongoose connected successfully");
+});
+
+var articleSchema = mongoose.Schema({
+  projectId: { type: Number, trim: true, unique: true },
+  projectName: { type: String, trim: true, unique: true },
+  projectTeazer: { type: String, trim: true, unique: true },
+  owner: { type: String, trim: true, unique: true },
+  rate: { type: Number, trim: true },
+  currentFund: { type: Number, trim: true },
+  goalFund: { type: String, trim: true },
+  numberOfBackers: { type: Number, trim: true },
+  daysToGO: { type: Number, trim: true },
+  BackersIds: { type: Number, trim: true, unique: true },
+  projectImg: { type: String, trim: true },
+  majorDescriptionImg: { type: String, trim: true },
+  majorDescription: { type: String, trim: true },
+  minorDescriptionImg: { type: String, trim: true },
+  minorDescription: { type: String, trim: true }
+});
+
+let Article = mongoose.model("Article", articleSchema);
+
+let add = () => {
+  for (var i = 0; i < 101; i++) {
+    var projectId = i;
+    var projectName = faker.lorem.sentence();
+    var projectTeazer = faker.lorem.sentence();
+    var owner = faker.name.findName();
+    var rate = faker.random.number({
+      min: 1,
+      max: 100
+    });
+    var currentFund = faker.random.number({
+      min: 100
+    });
+    var goalFund = faker.random.number({
+      min: 100
+    });
+    var numberOfBackers = faker.random.number({
+      max: 300
+    });
+    var daysToGO = faker.random.number({
+      max: 600
+    });
+    var BackersIds = faker.random.number();
+    var projectImg = faker.image.technics();
+    var majorDescriptionImg = faker.image.technics();
+    var majorDescription = faker.lorem.paragraph();
+    var minorDescriptionImg = faker.image.technics();
+    var minorDescription = faker.lorem.paragraph();
+
+    var topic = new Article({
       projectId: projectId,
       projectName: projectName,
       projectTeazer: projectTeazer,
+      owner: owner,
+      rate: rate,
       currentFund: currentFund,
       goalFund: goalFund,
       numberOfBackers: numberOfBackers,
@@ -93,11 +81,8 @@ const saveProjects = function(data) {
       minorDescriptionImg: minorDescriptionImg,
       minorDescription: minorDescription
     });
-    newProject
-      .save()
-      .then(data => console.log("Saved successfully"))
-      .catch(err => console.log(err));
   }
 };
-module.exports.Project = Project;
-module.exports.saveProjects = saveProjects;
+add();
+module.exports.Article = Article;
+module.exports.add = add;
