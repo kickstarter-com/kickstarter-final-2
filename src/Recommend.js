@@ -1,3 +1,4 @@
+  
 import React from 'react';
 import './Recommend.css';
 import Slider from 'infinite-react-carousel';
@@ -24,7 +25,7 @@ class Recommend extends React.Component {
                     <div className="Featured-div">
                      <h6>FEATURED PROJECT</h6>
                       <div>
-                         <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/026/920/261/bc262b06aa26da212fffdb7d0ef589fb_original.png?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1571647553&auto=format&frame=1&q=92&s=05b8ef9e066d9d54f2bced4868115db9"></img>
+                         <img alt="sorry" src={this.props.article.length?this.props.article[0].projectImg:null}></img>
                       </div>
                       <div>
                           <div className="mark-div"></div>
@@ -41,151 +42,151 @@ class Recommend extends React.Component {
                      <h6>RECOMMENDED</h6>
                      <div>
               <Slider { ...settings } >
-                    <div className="slider-unit">
+               <div className="slider-unit">
                 <div>
-                     <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/026/920/261/bc262b06aa26da212fffdb7d0ef589fb_original.png?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1571647553&auto=format&frame=1&q=92&s=05b8ef9e066d9d54f2bced4868115db9"></img>
+                     <img alt="sorry" src={this.props.article.length?this.props.article[1].projectImg:null}></img>
                 </div>
                 <div>
                    <div>
-                       <a href="/">Gwelf: The Survival Guide</a>
+                       <a href="https://proxy-kikstarter.herokuapp.com/?id=1">{this.props.article.length?this.props.article[1].projectName:null}</a>
                    </div>
                    <div>
-                       <span className="first-span">125% funded</span>
+                       <span className="first-span">{this.props.article.length?this.props.article[1].rate:null}% funded</span>
                    </div>
                    <div className="by-div">
-                       <span>BY </span><a href="/">Austen Gray</a>
-                   </div>
-                </div>
-            </div>      
-                      <div className="slider-unit">
-                <div>
-                     <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/027/153/381/63008927afbbc0ecdd59285111f0dca1_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1573292824&auto=format&frame=1&q=92&s=eedcffa96fdce7f7dac1b16ab6f58fac"></img>
-                </div>
-                <div>
-                   <div>
-                       <a href="/">Joker's Republic: Bringing NJ Ska-Punk ON TOUR!</a>
-                   </div>
-                   <div>
-                       <span className="first-span">125% funded</span>
-                   </div>
-                   <div className="by-div">
-                       <span>BY</span><a href="/">Austen Gray</a>
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[1].owner:null}</a>
                    </div>
                 </div>
             </div>
-                      <div className="slider-unit">
+               <div className="slider-unit">
                 <div>
-                     <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/027/153/381/63008927afbbc0ecdd59285111f0dca1_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1573292824&auto=format&frame=1&q=92&s=eedcffa96fdce7f7dac1b16ab6f58fac"></img>
+                     <img alt="sorry" src={this.props.article.length?this.props.article[2].projectImg:null}></img>
                 </div>
                 <div>
                    <div>
-                       <a href="/">Joker's Republic: Bringing NJ Ska-Punk ON TOUR!</a>
+                       <a href="https://proxy-kikstarter.herokuapp.com/?id=2">{this.props.article.length?this.props.article[2].projectName:null}</a>
                    </div>
                    <div>
-                       <span className="first-span">125% funded</span>
+                       <span className="first-span">{this.props.article.length?this.props.article[2].rate:null}% funded</span>
                    </div>
                    <div className="by-div">
-                       <span>BY</span><a href="/">Austen Gray</a>
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[2].owner:null}</a>
+                   </div>
+                </div>
+            </div> 
+               <div className="slider-unit">
+                <div>
+                     <img alt="sorry" src={this.props.article.length?this.props.article[3].projectImg:null}></img>
+                </div>
+                <div>
+                   <div>
+                       <a href="https://proxy-kikstarter.herokuapp.com/?id=3">{this.props.article.length?this.props.article[3].projectName:null}</a>
+                   </div>
+                   <div>
+                       <span className="first-span">{this.props.article.length?this.props.article[3].rate:null}% funded</span>
+                   </div>
+                   <div className="by-div">
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[3].owner:null}</a>
+                   </div>
+                </div>
+            </div>  
+               <div className="slider-unit">
+                <div>
+                     <img alt="sorry" src={this.props.article.length?this.props.article[4].projectImg:null}></img>
+                </div>
+                <div>
+                   <div>
+                       <a href="https://proxy-kikstarter.herokuapp.com/?id=4">{this.props.article.length?this.props.article[4].projectName:null}</a>
+                   </div>
+                   <div>
+                       <span className="first-span">{this.props.article.length?this.props.article[4].rate:null}% funded</span>
+                   </div>
+                   <div className="by-div">
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[4].owner:null}</a>
+                   </div>
+                </div>
+            </div> 
+               <div className="slider-unit">
+                <div>
+                     <img alt="sorry" src={this.props.article.length?this.props.article[5].projectImg:null}></img>
+                </div>
+                <div>
+                   <div>
+                       <a href="https://proxy-kikstarter.herokuapp.com/?id=5">{this.props.article.length?this.props.article[5].projectName:null}</a>
+                   </div>
+                   <div>
+                       <span className="first-span">{this.props.article.length?this.props.article[5].rate:null}% funded</span>
+                   </div>
+                   <div className="by-div">
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[5].owner:null}</a>
                    </div>
                 </div>
             </div>
-                      <div className="slider-unit">
+               <div className="slider-unit">
                 <div>
-                     <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/027/153/381/63008927afbbc0ecdd59285111f0dca1_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1573292824&auto=format&frame=1&q=92&s=eedcffa96fdce7f7dac1b16ab6f58fac"></img>
+                     <img alt="sorry" src={this.props.article.length?this.props.article[6].projectImg:null}></img>
                 </div>
                 <div>
                    <div>
-                       <a href="/">Joker's Republic: Bringing NJ Ska-Punk ON TOUR!</a>
+                       <a href="https://proxy-kikstarter.herokuapp.com/?id=6">{this.props.article.length?this.props.article[6].projectName:null}</a>
                    </div>
                    <div>
-                       <span className="first-span">125% funded</span>
+                       <span className="first-span">{this.props.article.length?this.props.article[6].rate:null}% funded</span>
                    </div>
                    <div className="by-div">
-                       <span>BY</span><a href="/">Austen Gray</a>
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[6].owner:null}</a>
                    </div>
                 </div>
             </div>
-                      <div className="slider-unit">
+               <div className="slider-unit">
                 <div>
-                     <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/027/153/381/63008927afbbc0ecdd59285111f0dca1_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1573292824&auto=format&frame=1&q=92&s=eedcffa96fdce7f7dac1b16ab6f58fac"></img>
+                     <img alt="sorry" src={this.props.article.length?this.props.article[7].projectImg:null}></img>
                 </div>
                 <div>
                    <div>
-                       <a href="/">Joker's Republic: Bringing NJ Ska-Punk ON TOUR!</a>
+                       <a href="https://proxy-kikstarter.herokuapp.com/?id=7">{this.props.article.length?this.props.article[7].projectName:null}</a>
                    </div>
                    <div>
-                       <span className="first-span">125% funded</span>
+                       <span className="first-span">{this.props.article.length?this.props.article[7].rate:null}% funded</span>
                    </div>
                    <div className="by-div">
-                       <span>BY</span><a href="/">Austen Gray</a>
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[7].owner:null}</a>
                    </div>
                 </div>
             </div>
-                      <div className="slider-unit">
+               <div className="slider-unit">
                 <div>
-                     <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/027/153/381/63008927afbbc0ecdd59285111f0dca1_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1573292824&auto=format&frame=1&q=92&s=eedcffa96fdce7f7dac1b16ab6f58fac"></img>
+                     <img alt="sorry" src={this.props.article.length?this.props.article[8].projectImg:null}></img>
                 </div>
                 <div>
                    <div>
-                       <a href="/">Joker's Republic: Bringing NJ Ska-Punk ON TOUR!</a>
+                       <a href="https://proxy-kikstarter.herokuapp.com/?id=8">{this.props.article.length?this.props.article[8].projectName:null}</a>
                    </div>
                    <div>
-                       <span className="first-span">125% funded</span>
+                       <span className="first-span">{this.props.article.length?this.props.article[8].rate:null}% funded</span>
                    </div>
                    <div className="by-div">
-                       <span>BY</span><a href="/">Austen Gray</a>
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[8].owner:null}</a>
                    </div>
                 </div>
             </div>
-                      <div className="slider-unit">
+               <div className="slider-unit">
                 <div>
-                     <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/027/153/381/63008927afbbc0ecdd59285111f0dca1_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1573292824&auto=format&frame=1&q=92&s=eedcffa96fdce7f7dac1b16ab6f58fac"></img>
+                     <img alt="sorry" src={this.props.article.length?this.props.article[9].projectImg:null}></img>
                 </div>
                 <div>
                    <div>
-                       <a href="/">Joker's Republic: Bringing NJ Ska-Punk ON TOUR!</a>
+                       <a href="https://proxy-kikstarter.herokuapp.com/?id=9">{this.props.article.length?this.props.article[9].projectName:null}</a>
                    </div>
                    <div>
-                       <span className="first-span">125% funded</span>
+                       <span className="first-span">{this.props.article.length?this.props.article[9].rate:null}% funded</span>
                    </div>
                    <div className="by-div">
-                       <span>BY</span><a href="/">Austen Gray</a>
+                       <span>BY </span><a href="/">{this.props.article.length?this.props.article[9].owner:null}</a>
                    </div>
                 </div>
             </div>
-                      <div className="slider-unit">
-                <div>
-                     <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/027/153/381/63008927afbbc0ecdd59285111f0dca1_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1573292824&auto=format&frame=1&q=92&s=eedcffa96fdce7f7dac1b16ab6f58fac"></img>
-                </div>
-                <div>
-                   <div>
-                       <a href="/">Joker's Republic: Bringing NJ Ska-Punk ON TOUR!</a>
-                   </div>
-                   <div>
-                       <span className="first-span">125% funded</span>
-                   </div>
-                   <div className="by-div">
-                       <span>BY</span><a href="/">Austen Gray</a>
-                   </div>
-                </div>
-            </div>
-                      <div className="slider-unit">
-                <div>
-                     <img alt="sorry" src="https://ksr-ugc.imgix.net/assets/027/153/381/63008927afbbc0ecdd59285111f0dca1_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1024&h=576&fit=crop&v=1573292824&auto=format&frame=1&q=92&s=eedcffa96fdce7f7dac1b16ab6f58fac"></img>
-                </div>
-                <div>
-                   <div>
-                       <a href="/">Joker's Republic: Bringing NJ Ska-Punk ON TOUR!</a>
-                   </div>
-                   <div>
-                       <span className="first-span">125% funded</span>
-                   </div>
-                   <div className="by-div">
-                       <span>BY</span><a href="/">Austen Gray</a>
-                   </div>
-                </div>
-            </div>
-               </Slider>
+            </Slider>
             </div>
           </div>
        </div>
