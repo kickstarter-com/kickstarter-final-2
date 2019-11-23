@@ -33,9 +33,15 @@ class Login extends React.Component {
       url: "http://localhost:8000/login",
       type: "POST",
       data: userData,
-      datatype: "json",
-      success: function() {
+      datatype: "application/json",
+      success: function(data) {
         console.log("login done");
+        console.log(data.user);
+        alert("Welcome : " + data.user.email);
+        window.location.href = "http://localhost:3000/";
+      },
+      error: function(err) {
+        alert("please enter valid credentials ");
       }
     });
   }
