@@ -1,17 +1,17 @@
 const { MongoClient } = require("mongodb");
 
 const projectData = {
-  projectId: 1500,
-  projectName: "test-ashjansdsds",
-  projectTeazer: "protea-testsdsd",
-  owner: "onr-testvdgh",
-  rate: 11,
-  currentFund: "currentFund",
-  goalFund: 444,
-  numberOfBackers: 11,
-  daysToGO: 11,
-  BackersIds: 11524545,
-  projectImg: "projectImg11",
+  projectId: 1501,
+  projectName: "test-ashjansdsdsdsd",
+  projectTeazer: "protea-testsdsdsds",
+  owner: "onr-testvdghsds",
+  rate: 121,
+  currentFund: "currentFundsds",
+  goalFund: 4443,
+  numberOfBackers: 112,
+  daysToGO: 111,
+  BackersIds: 1152454523,
+  projectImg: "projectImg1121",
   majorDescriptionImg: "majorDescriptionImg1",
   majorDescription: "majorDescription1",
   minorDescriptionImg: "minorDescriptionIm1g",
@@ -41,7 +41,7 @@ describe("insert", () => {
     const articles = db.collection("articles");
 
     await articles.insertOne(projectData);
-    const insertedProject = await articles.findOne({ projectId: 1500 });
+    const insertedProject = await articles.findOne({ projectId: 1501 });
     expect(insertedProject).toEqual(projectData);
   });
 });
