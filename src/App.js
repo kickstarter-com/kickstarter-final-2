@@ -57,20 +57,20 @@ render() {
     
     <div className="App">
       <Router>
-    <Switch>
-    <Route exact path="/">
-      <Nav />
-      <Recommend article = {this.state.articls}/>
-      <OneTopic />
-      <SliderPart article = {this.state.articls}/>
-      </Route>
-      <Route exact path="/login">
-        <Login />
-      </Route>
-      <Route exact path="/signup">
-      <Signup />
-      </Route>
-      </Switch>
+       <Switch>
+        <Route exact path="/">
+         <Nav />
+          <Recommend article = {this.state.articls}/>
+          <OneTopic article = {this.state.articls}/>
+          <SliderPart article = {this.state.articls}/>
+         </Route>
+         <Route exact path="/login">
+          <Login />
+         </Route>
+         <Route exact path="/signup">
+           <Signup />
+         </Route>
+        </Switch>
       </Router>
     </div>
     

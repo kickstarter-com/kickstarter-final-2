@@ -9,15 +9,8 @@ class SliderPart extends React.Component {
 
     
   }
-  render() {
-    var Style = "width: ";
-    var ber = "%";
-
-    // const settings =  {
-    //   arrows: false,
-    //   centerPadding: 10,
-    //   slidesToShow: 5
-    // };
+  render() {   
+  
     return (
       <div>
         
@@ -29,7 +22,7 @@ class SliderPart extends React.Component {
           {this.props.article.map(item => {      
           return <div className="slider-unit-2" key={item._id}>
             <div><a href={"https://proxy-kikstarter.herokuapp.com/?id="+item.projectId}><img alt="sorry" src={item.projectImg}></img></a></div>
-            <div className="marko-div" divStyle={Style+ item.rate+ber}></div>
+            <div className="marko-div" ></div>
             <div>
             <a href={"https://proxy-kikstarter.herokuapp.com/?id="+item.projectId}><h3>{item.projectName}</h3></a>
             </div>
