@@ -67,6 +67,10 @@ h6{
   font-size: 14px;
   color: #282828;
 }
+.slider-unit a:hover{
+  color: #037362;
+  text-decoration: underline;
+}
 .first-span{
  display: block;
  font-size: 12px;
@@ -108,6 +112,10 @@ h6{
   font-size: 28px;
   font-weight: 400;
   margin: 10px 0;
+}
+.topic-link h3:hover{
+  color: #037362;
+  text-decoration: underline;
 }
 .topic-link p{
   font-family: "Cooper Light", Georgia, Times, "Times New Roman", serif;
